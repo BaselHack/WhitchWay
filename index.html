@@ -1,3 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	
+	
+	
+	<script language="javascript" type="text/javascript">
+	function manipulateURL() {
+	
+        var form1 = document.querySelector("#from1").value;
+		var form2 = document.querySelector("#from2").value;
+	
+		var to1 = document.querySelector("#to1").value;
+		var to2 = document.querySelector("#to1").value;
+	
+		var through1 = document.querySelector("#through1").value;
+		var through2 = document.querySelector("#through2").value;
+	
+		window.location = "../bvbrtrc/index.html#id="+form1;
+		 
+	   }
+	
+	function addRoute(){}
+	
+	
+
+
+
+</script> 
+	
+	
+	<style>
+	<!--- Small devices (landscape phones, 576px and up) -->
+	@media (min-width: 576px) { ... }
+
+<!--- Medium devices (tablets, 768px and up) -->
+@media (min-width: 768px) { ... }
+
+<!---  Large devices (desktops, 992px and up)-->
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+  
+
+    </style>
+		
+	
+	
+   <title>Whitch Way? </title>
+  </head>
+  
+  
+  <body>
+   
+   <form>
+   
+   <h1> Which Way? </h1>
+   
+   
+    <!-- Route 1 -->
+	<div class="card">
+  <div class="card-header">
+    Route 1
+  </div>
+  <div class="card-body">
+  
+  
+    <div class="form-group">
+    <label for="from1">From</label>
+    <input type="from1" class="form-control" id="from1" aria-describedby="from1" placeholder="Enter Station from">
+    
+  </div>
+   <div class="form-group">
+    <label for="to1">To</label>
+    <input type="to1" class="form-control" id="to1" aria-describedby="to1" placeholder="Enter Station to">
+    
+  </div>
+  <div class="form-group">
+    <label for="through1">Through</label>
+    <input type="through1" class="form-control" id="through1" aria-describedby="through1" placeholder="Enter Station to">
+    
+  </div>
+	
+	
+  </div>
+</div>
+	
+	
+
+ 
+  <!-- Route 2 -->
+  	<div class="card">
+  <div class="card-header">
+    Route 1
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+    <label for="from2">From</label>
+    <input type="from2" class="form-control" id="from2" aria-describedby="from2" placeholder="Enter Station from">
+    
+  </div>
+  
+  <div class="form-group">
+    <label for="to2">To</label>
+    <input type="to2" class="form-control" id="to2" aria-describedby="to2" placeholder="Enter Station to">
+    
+  </div>
+  <div class="form-group">
+    <label for="through2">Through</label>
+    <input type="through2" class="form-control" id="through2" aria-describedby="through2" placeholder="Enter Station through (optional)">
+    
+  </div>
+ </div>
+
+  
+  </div>
+  
+  <div id="moreRoute"></div>
+  
+  
+  
+  <button type="button" class="btn btn-success"  onclick="addRoute()>">+ Add one more Route</button>
+  <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
+</form>
+   
+   
+   
+   
    
   </body>
 </html>
