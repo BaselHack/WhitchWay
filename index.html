@@ -52,12 +52,20 @@
 	   }
 	
 	function addRoute(){
-	var url = location.href.split("#")[1];
-	var url = url.split("=")[1];
-	document.getElementById("from1").value(url);
+
 	}
 	
 	function edit(){
+	var url = location.href.split("#")[1];
+	var url = url.split("=")[1];
+	var urlA = url.split(",")[0];
+	var urlB = url.split(",")[1];
+	
+	
+	 var a = document.getElementById("from1");
+	a.value = urlA;
+	 var b = document.getElementById("to1");
+	 b.value = urlB;
 	
 	
 	
@@ -68,6 +76,8 @@
 	var e = document.getElementById("result");
 		e.classList.remove("visibilityYes");
 		e.classList.add("visibilityNo");
+		
+		
 	
 	}
 	
@@ -129,12 +139,12 @@
   <div class="card-body">
 	  <div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">From</span>
-	  <input id="from1" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
+	  <input id="from1" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
 	</div>
 	</br>
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">To</span>
-	  <input id="to1" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
+	  <input id="to1" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
 	</div>
   </br>
 
