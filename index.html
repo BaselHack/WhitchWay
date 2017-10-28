@@ -27,7 +27,25 @@
 		 
 	   }
 	
-	function addRoute(){}
+	function addRoute(){
+	
+	window.alert("sometext");}
+	
+	function addThrough(){
+	
+			var oldNumb = document.getElementByID("counterThrough").innerText();
+			window.alert("sometext");
+			var newNumb = oldNumb + 1;
+			
+			var string = '<div class="input-group">'+
+							'<span class="input-group-addon" id="basic-addon1">Through</span>'+
+							'<input type="through1" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+						 '</div>'+
+						 '</br>'+
+						 '<div id="moreThrough"'+newNumb+'></div>';
+			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
+
+	}
 	
 	
 
@@ -35,20 +53,13 @@
 
 </script> 
 	
-	
+	<!--- CSS Style -->
 	<style>
-	<!--- Small devices (landscape phones, 576px and up) -->
-	@media (min-width: 576px) { body{width: 500px; background-color: white;}   }
-	<!--- Medium devices (tablets, 768px and up) -->
-	@media (min-width: 768px) { body{width: 500px; background-color: green;} }
-	<!---  Large devices (desktops, 992px and up)-->
-	@media (min-width: 992px) { body{width: 500px; background-color: blue;} }
-	<!--- Extra large devices (large desktops, 1200px and up)-->
-	@media (min-width: 1200px) { body{width: 500px; background-color: black;} }
-	
-	body {background-color: red;}
-
-    </style>
+		form{padding: 20px;}
+		.card {padding-bottom: 10px;}
+		.input-group {padding: 5 5 5 5;}
+		.input-group-addon{width: 100px;}
+	</style>
 		
 	
 	
@@ -69,57 +80,29 @@
     Route 1
   </div>
   <div class="card-body">
-  
-  
-    <div class="form-group">
-    <label for="from1">From</label>
-    <input type="from1" class="form-control" id="from1" aria-describedby="from1" placeholder="Enter Station from">
-    
-  </div>
-   <div class="form-group">
-    <label for="to1">To</label>
-    <input type="to1" class="form-control" id="to1" aria-describedby="to1" placeholder="Enter Station to">
-    
-  </div>
-  <div class="form-group">
-    <label for="through1">Through</label>
-    <input type="through1" class="form-control" id="through1" aria-describedby="through1" placeholder="Enter Station to">
-    
-  </div>
+	  <div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">From</span>
+	  <input type="from1" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
+	</div>
+	</br>
+	<div class="input-group">
+	  <span class="input-group-addon" id="basic-addon1">To</span>
+	  <input type="to1" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
+	</div>
+  </br>
+
+ 
+  <div id="moreThrough0"></div>
+  <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button> 
+  <div id="counterThrough" style ="visibility: collapse">0</div>
 	
 	
   </div>
 </div>
-	
+	</br>
 	
 
  
-  <!-- Route 2 -->
-  	<div class="card">
-  <div class="card-header">
-    Route 1
-  </div>
-  <div class="card-body">
-    <div class="form-group">
-    <label for="from2">From</label>
-    <input type="from2" class="form-control" id="from2" aria-describedby="from2" placeholder="Enter Station from">
-    
-  </div>
-  
-  <div class="form-group">
-    <label for="to2">To</label>
-    <input type="to2" class="form-control" id="to2" aria-describedby="to2" placeholder="Enter Station to">
-    
-  </div>
-  <div class="form-group">
-    <label for="through2">Through</label>
-    <input type="through2" class="form-control" id="through2" aria-describedby="through2" placeholder="Enter Station through (optional)">
-    
-  </div>
- </div>
-
-  
-  </div>
   
   <div id="moreRoute"></div>
   
