@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <html lang="de">
-<meta charset="utf-8"> 
+
   <head>
-    
+    <meta charset="utf-8"> 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,26 +12,30 @@
 	<script src="whitchway.js" ></script>
 	
 	
-	
-	
-	
-	<!--- CSS Style -->
-	<style>
-		form{padding: 20px;}
-		.card {padding-bottom: 10px;}
-		.input-group {padding: 5 5 5 5;}
-		.input-group-addon{width: 100px;}
-	</style>
+	<script language="javascript" type="text/javascript">
+  
+	$(document).ready(function() {
+			urlTesten();
+			});
+
+        
+   
+ 
+	function urlTesten(){
+
+		var url = window.location;		
 		
-	
-	
-   <title>Whitch Way? </title>
-  </head>
-  
-  
-  <body>
-   <script language="javascript" type="text/javascript">
-	
+		var n = $(url).text().search("#");
+		
+		window.alert(n);
+		
+		if( parseInt(n) == -1){
+		  window.alert("Verstecken");
+		}else{
+		window.alert("GUT");
+		}
+	}
+   
 	<!-- Daten in die URL schreiben -->
 	
 	
@@ -70,6 +74,24 @@
 
 
 </script> 
+	
+	
+	<!--- CSS Style -->
+	<style>
+		form{padding: 20px;}
+		.card {padding-bottom: 10px;}
+		.input-group {padding: 5 5 5 5;}
+		.input-group-addon{width: 100px;}
+	</style>
+		
+	
+	
+   <title>Whitch Way? </title>
+  </head>
+  
+  
+  <body >
+   
    
    
    
