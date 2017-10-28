@@ -22,17 +22,19 @@
    
  
 	function urlTesten(){
-
-		var url = window.location;		
-		
-		var n = $(url).text().search("#");
-		
-		window.alert(n);
-		
-		if( parseInt(n) == -1){
-		  window.alert("Verstecken");
-		}else{
+		var url = location.href.split("#")[1];
+		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
+		if(url === undefined){
 		window.alert("GUT");
+		 
+		}else{
+		 var d = document.getElementById("intro");
+		d.classList.add("visibilityNo");
+		var e = document.getElementById("result");
+		e.classList.remove("visibilityYes");
+		e.classList.add("visibilityNo");
+		
+		
 		}
 	}
    
@@ -78,10 +80,13 @@
 	
 	<!--- CSS Style -->
 	<style>
+		h1{padding: 20px;}
 		form{padding: 20px;}
 		.card {padding-bottom: 10px;}
 		.input-group {padding: 5 5 5 5;}
 		.input-group-addon{width: 100px;}
+		.visibilityYes { visibility: visible;}
+		.visibilityNo { visibility: hidden;}
 	</style>
 		
 	
@@ -92,12 +97,12 @@
   
   <body >
    
-   
-   
-   
-   <form>
-   
    <h1> Whitch Way? </h1>
+   
+   
+   <form id="intro"  >
+   
+   
    
    
     <!-- Route 1 -->
@@ -137,8 +142,11 @@
   <button type="button" class="btn btn-success"  onclick="addRoute()>">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
 </form>
+
+<div id="result" class="visibilityNo" >
+	<button type="button" class="btn btn-danger">Routen Editieren</button>
    
-   
+ </div>  
    
    
    
