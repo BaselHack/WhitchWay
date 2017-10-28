@@ -27,16 +27,23 @@
 		 
 	   }
 	
-	function addRoute(){}
+	function addRoute(){
+	
+	window.alert("sometext");}
 	
 	function addThrough(){
+	
+			var oldNumb = document.getElementByID("counterThrough").innerText();
+			window.alert("sometext");
+			var newNumb = oldNumb + 1;
+			
 			var string = '<div class="input-group">'+
 							'<span class="input-group-addon" id="basic-addon1">Through</span>'+
 							'<input type="through1" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
 						 '</div>'+
 						 '</br>'+
-						 '<div id="moreThrough"></div>';
-			document.getElementById('moreThrough').innerHTML = string;
+						 '<div id="moreThrough"'+newNumb+'></div>';
+			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
 
 	}
 	
@@ -85,8 +92,9 @@
   </br>
 
  
-  <div id="moreThrough"></div>
-  <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button>
+  <div id="moreThrough0"></div>
+  <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button> 
+  <div id="counterThrough" style ="visibility: collapse">0</div>
 	
 	
   </div>
