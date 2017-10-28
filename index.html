@@ -31,8 +31,8 @@
 		 var d = document.getElementById("intro");
 		d.classList.add("visibilityNo");
 		var e = document.getElementById("result");
-		e.classList.remove("visibilityYes");
-		e.classList.add("visibilityNo");
+		e.classList.remove("visibilityNo");
+		e.classList.add("visibilityYes");
 		
 		
 		}
@@ -47,11 +47,27 @@
 		var form1 = document.getElementById("from1").value;
 		var to1 = document.getElementById("to1").value;
 		window.location = "../bvbrtrc/index.html#r1="+form1+","+to1; 
+		location.reload();
        
 	   }
 	
 	function addRoute(){
-			
+	var url = location.href.split("#")[1];
+	var url = url.split("=")[1];
+	document.getElementById("from1").value(url);
+	}
+	
+	function edit(){
+	
+	
+	
+	
+	var d = document.getElementById("intro");
+		d.classList.remove("visibilityNo");
+		d.classList.add("visibilityYes");
+	var e = document.getElementById("result");
+		e.classList.remove("visibilityYes");
+		e.classList.add("visibilityNo");
 	
 	}
 	
@@ -86,7 +102,7 @@
 		.input-group {padding: 5 5 5 5;}
 		.input-group-addon{width: 100px;}
 		.visibilityYes { visibility: visible;}
-		.visibilityNo { visibility: hidden;}
+		.visibilityNo { visibility: collapse;}
 	</style>
 		
 	
@@ -139,12 +155,12 @@
   
   
   
-  <button type="button" class="btn btn-success"  onclick="addRoute()>">+ Add one more Route</button>
+  <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
 </form>
 
 <div id="result" class="visibilityNo" >
-	<button type="button" class="btn btn-danger">Routen Editieren</button>
+	<button type="button" class="btn btn-danger" onclick="edit()">Routen Editieren</button>
    
  </div>  
    
