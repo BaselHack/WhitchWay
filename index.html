@@ -60,12 +60,15 @@
 	   }
 	
 	function addRoute(){
+	var oldNumb = document.getElementById('counterRoute').getAttribute('value');
+	var newNumb = parseInt(oldNumb) + 1;
+	var nameButton = "'buttonRoute"+newNumb+"'";
 		var string = '<div class="card">'+
 		'  				<div class="card-header">'+
-		'					Route 1 </div>'+
+		'					Route '+newNumb+' </div>'+
 		'				  <div class="card-body">'+
 		' 				  <div class="input-group">'+
-		'				  <span class="input-group-addon" id="basic-addon1">From</span>'+
+		'				  <span class="input-group-addon" id="basic-addon1">From </span>'+
 		'				  <input id="from1" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">'+
 		'				</div>'+
 		'      			</br>'+
@@ -75,13 +78,17 @@
 		'     			</div>'+
 		'			  </br>'+
 		'				<div id="moreThrough0"></div>'+
-		'				<button type="button" class="btn btn-success"  onclick="addThrough1()">+ Add Through</button> '+
+		'				<button id="buttonRoute'+newNumb+'" type="button" class="btn btn-success"  onclick="addThrough1('+nameButton+')">+ Add Through</button> '+
 		'				<div id="counterThrough" value="0" style ="visibility: collapse" >0</div>'+
 		'			  </div>'+
 		'				</div>'+
-		' 				</br>';
+		' 				</br>'+
+		'				<div id="moreRoute'+newNumb+'"></div>';
 		
-		document.getElementById('moreRoute').innerHTML = string;
+		document.getElementById('moreRoute'+oldNumb).innerHTML = string;
+		
+			document.getElementById('counterRoute').setAttribute("value", newNumb);
+			var newnewNumb = document.getElementById('moreRoute'+oldNumb).getAttribute('value');	
 
 	}
 	
@@ -113,7 +120,8 @@
 	
 	
 	<!-- neue Through hinzufügen -->
-	function addThrough1(){
+	function addThrough1(id){
+			window.alert(id);
 			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
 			var newNumb = parseInt(oldNumb) + 1;
 			var string = '<div class="input-group">'+
@@ -180,7 +188,7 @@
 
  
   <div id="moreThrough0"></div>
-  <button type="button" class="btn btn-success"  onclick="addThrough1()">+ Add Through</button> 
+  <button id="buttonRoute1" type="button" class="btn btn-success"  onclick="addThrough1('buttonRoute1')">+ Add Through</button> 
   <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
@@ -191,7 +199,8 @@
 
  
   
-  <div id="moreRoute"></div>
+  <div id="moreRoute1"></div>
+  <div id="counterRoute" value="1" style ="visibility: collapse" >1</div>
   
   
   
@@ -200,7 +209,7 @@
 </form>
 
 <div id="result" class="visibilityNo" >
-	<button type="button" class="btn btn-danger" onclick="edit()">Routen Editieren</button>
+	<button type="button" class="btn btn-danger" onclick="edit()">Edite Routes</button>
    
  </div>  
    
