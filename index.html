@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="de">
+<meta charset="utf-8"> 
   <head>
     
 	<!-- Bootstrap -->
@@ -11,64 +13,7 @@
 	
 	
 	
-	<script language="javascript" type="text/javascript">
-	  window.onerror = Fehlerbehandlung;
-
-    function Fehlerbehandlung (Nachricht, Datei, Zeile) {
-      Fehler = "Fehlermeldung:\n" + Nachricht + "\n" + Datei + "\n" + Zeile;
-      zeigeFehler();
-      return true;
-    }
-
-    function zeigeFehler () {
-      alert(Fehler);
-    }
-
-
 	
-	
-	
-	
-	
-	function manipulateURL() {
-
-        var form1 = document.getElementById("from1").value;
-		var to1 = document.getElementById("to1").value;
-		
-	    window.alert(form1);
-		window.location = "../bvbrtrc/index.html#r1="+form1+","+to1;
-		 
-	   }
-	
-	function addRoute(){
-	
-	window.alert("sometext");}
-	
-	function addThrough(){
-			
-				
-				parseInt(oldNumb)
-		
-			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
-			var newNumb = parseInt(oldNumb) + 1;
-			var string = '<div class="input-group">'+
-							'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
-							'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
-						 '</div>'+
-						 '</br>'+
-						 '<div id="moreThrough'+newNumb+'"></div>';
-			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
-			document.getElementById('counterThrough').setAttribute("value", newNumb);
-			var newnewNumb = document.getElementById('counterThrough').getAttribute('value');
-			
-
-	}
-	
-	
-
-
-
-</script> 
 	
 	<!--- CSS Style -->
 	<style>
@@ -85,6 +30,48 @@
   
   
   <body>
+   <script language="javascript" type="text/javascript">
+	
+	<!-- Daten in die URL schreiben -->
+	
+	
+	
+	
+	function manipulateURL() {
+		var form1 = document.getElementById("from1").value;
+		var to1 = document.getElementById("to1").value;
+		window.location = "../bvbrtrc/index.html#r1="+form1+","+to1; 
+       
+	   }
+	
+	function addRoute(){
+			
+	
+	}
+	
+	
+	<!-- neue Through hinzufügen -->
+	function addThrough1(){
+			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
+			var newNumb = parseInt(oldNumb) + 1;
+			var string = '<div class="input-group">'+
+							'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+							'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+						 '</div>'+
+						 '</br>'+
+						 '<div id="moreThrough'+newNumb+'"></div>';
+			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
+			document.getElementById('counterThrough').setAttribute("value", newNumb);
+			var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');	
+	} <!-- Ende Through-->
+	
+	
+
+
+
+</script> 
+   
+   
    
    <form>
    
@@ -110,7 +97,7 @@
 
  
   <div id="moreThrough0"></div>
-  <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button> 
+  <button type="button" class="btn btn-success"  onclick="addThrough1()">+ Add Through</button> 
   <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
