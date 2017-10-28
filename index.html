@@ -52,6 +52,28 @@
 	   }
 	
 	function addRoute(){
+		var string = '<div class="card">'+
+		'  				<div class="card-header">'+
+		'					Route 1 </div>'+
+		'				  <div class="card-body">'+
+		' 				  <div class="input-group">'+
+		'				  <span class="input-group-addon" id="basic-addon1">From</span>'+
+		'				  <input id="from1" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">'+
+		'				</div>'+
+		'      			</br>'+
+		'				<div class="input-group">'+
+		' 		   	  <span class="input-group-addon" id="basic-addon1">To</span>'+
+		'       	  <input id="to1" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">'+
+		'     			</div>'+
+		'			  </br>'+
+		'				<div id="moreThrough0"></div>'+
+		'				<button type="button" class="btn btn-success"  onclick="addThrough1()">+ Add Through</button> '+
+		'				<div id="counterThrough" value="0" style ="visibility: collapse" >0</div>'+
+		'			  </div>'+
+		'				</div>'+
+		' 				</br>';
+		
+		document.getElementById('moreRoute').innerHTML = string;
 
 	}
 	
