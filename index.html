@@ -32,18 +32,24 @@
 	window.alert("sometext");}
 	
 	function addThrough(){
-	
-			var oldNumb = document.getElementByID("counterThrough").innerText();
-			window.alert("sometext");
-			var newNumb = oldNumb + 1;
 			
+				
+				parseInt(oldNumb)
+		
+			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
+			var newNumb = parseInt(oldNumb) + 1;
+			window.alert("Old Number: "+oldNumb);
+			window.alert("New Number: "+newNumb);
 			var string = '<div class="input-group">'+
-							'<span class="input-group-addon" id="basic-addon1">Through</span>'+
+							'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
 							'<input type="through1" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
 						 '</div>'+
 						 '</br>'+
-						 '<div id="moreThrough"'+newNumb+'></div>';
+						 '<div id="moreThrough'+newNumb+'"></div>';
 			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
+			document.getElementById('counterThrough').setAttribute("value", newNumb);
+			var newnewNumb = document.getElementById('counterThrough').getAttribute('value');
+			
 
 	}
 	
@@ -94,7 +100,7 @@
  
   <div id="moreThrough0"></div>
   <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button> 
-  <div id="counterThrough" style ="visibility: collapse">0</div>
+  <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
   </div>
