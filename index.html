@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="de">
+
   <head>
-    
+    <meta charset="utf-8"> 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
@@ -10,42 +12,80 @@
 	
 	
 	
-	
 	<script language="javascript" type="text/javascript">
-	function manipulateURL() {
-	
-        var form1 = document.querySelector("#from1").value;
-		var form2 = document.querySelector("#from2").value;
-	
-		var to1 = document.querySelector("#to1").value;
-		var to2 = document.querySelector("#to1").value;
-	
-		var through1 = document.querySelector("#through1").value;
-		var through2 = document.querySelector("#through2").value;
-	
-		window.location = "../bvbrtrc/index.html#id="+form1;
+  
+	$(document).ready(function() {
+			urlTesten();
+			});
+
+        
+   
+ 
+	function urlTesten(){
+		var url = location.href.split("#")[1];
+		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
+		if(url === undefined){
+		window.alert("GUT");
 		 
+		}else{
+		 var d = document.getElementById("intro");
+		d.classList.add("visibilityNo");
+		var e = document.getElementById("result");
+		e.classList.remove("visibilityNo");
+		e.classList.add("visibilityYes");
+		
+		
+		}
+	}
+   
+	<!-- Daten in die URL schreiben -->
+	
+	
+	
+	
+	function manipulateURL() {
+		var form1 = document.getElementById("from1").value;
+		var to1 = document.getElementById("to1").value;
+		window.location = "../bvbrtrc/index.html#r1="+form1+","+to1; 
+		location.reload();
+       
 	   }
 	
 	function addRoute(){
+	var url = location.href.split("#")[1];
+	var url = url.split("=")[1];
+	document.getElementById("from1").value(url);
+	}
 	
-	window.alert("sometext");}
+	function edit(){
 	
-	function addThrough(){
 	
-			var oldNumb = document.getElementByID("counterThrough").innerText();
-			window.alert("sometext");
-			var newNumb = oldNumb + 1;
-			
+	
+	
+	var d = document.getElementById("intro");
+		d.classList.remove("visibilityNo");
+		d.classList.add("visibilityYes");
+	var e = document.getElementById("result");
+		e.classList.remove("visibilityYes");
+		e.classList.add("visibilityNo");
+	
+	}
+	
+	
+	<!-- neue Through hinzufügen -->
+	function addThrough1(){
+			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
+			var newNumb = parseInt(oldNumb) + 1;
 			var string = '<div class="input-group">'+
-							'<span class="input-group-addon" id="basic-addon1">Through</span>'+
-							'<input type="through1" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+							'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+							'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
 						 '</div>'+
 						 '</br>'+
-						 '<div id="moreThrough"'+newNumb+'></div>';
+						 '<div id="moreThrough'+newNumb+'"></div>';
 			document.getElementById('moreThrough'+oldNumb).innerHTML = string;
-
-	}
+			document.getElementById('counterThrough').setAttribute("value", newNumb);
+			var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');	
+	} <!-- Ende Through-->
 	
 	
 
@@ -53,12 +93,16 @@
 
 </script> 
 	
+	
 	<!--- CSS Style -->
 	<style>
+		h1{padding: 20px;}
 		form{padding: 20px;}
 		.card {padding-bottom: 10px;}
 		.input-group {padding: 5 5 5 5;}
 		.input-group-addon{width: 100px;}
+		.visibilityYes { visibility: visible;}
+		.visibilityNo { visibility: collapse;}
 	</style>
 		
 	
@@ -67,11 +111,14 @@
   </head>
   
   
-  <body>
-   
-   <form>
+  <body >
    
    <h1> Whitch Way? </h1>
+   
+   
+   <form id="intro"  >
+   
+   
    
    
     <!-- Route 1 -->
@@ -82,19 +129,19 @@
   <div class="card-body">
 	  <div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">From</span>
-	  <input type="from1" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
+	  <input id="from1" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
 	</div>
 	</br>
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">To</span>
-	  <input type="to1" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
+	  <input id="to1" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
 	</div>
   </br>
 
  
   <div id="moreThrough0"></div>
-  <button type="button" class="btn btn-success"  onclick="addThrough()">+ Add Through</button> 
-  <div id="counterThrough" style ="visibility: collapse">0</div>
+  <button type="button" class="btn btn-success"  onclick="addThrough1()">+ Add Through</button> 
+  <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
   </div>
@@ -108,11 +155,14 @@
   
   
   
-  <button type="button" class="btn btn-success"  onclick="addRoute()>">+ Add one more Route</button>
+  <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
 </form>
+
+<div id="result" class="visibilityNo" >
+	<button type="button" class="btn btn-danger" onclick="edit()">Routen Editieren</button>
    
-   
+ </div>  
    
    
    <script src="whitchway.js" ></script>
