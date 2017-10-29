@@ -4,10 +4,10 @@
 - find trip von a nach b mit station id und zeit (now) als param
 - stationTable mit param station id, richtung, zeit, wie weit in die zukunft?
 
-
-
  */
-
+function getStationName(id) {
+	return "Station" + id;
+}
 
 
 function findStation(query, callback) {
@@ -31,17 +31,31 @@ function findStation(query, callback) {
 }
 
 
-
-function getArrivalTime(fromId, toId) {
-	return new Date(new Date().getTime()+(1000*60*(parseInt(fromId) + parseInt(toId))))
+function formatWithTrailingZeros(i, width) {
+	var ret = ""+i;
+	while(ret.length < width) {
+		ret = "0"+ret;
+	}
+	return ret;
 }
 
-
-
-
-
-var url = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%3D%27http%3A%2F%2Fwww.efa-bw.de%2Fandroid_bvb%2FXML_COORD_REQUEST%3Flanguage%3Den%26coord%3D3394151.17870016%253A893628.1039322363%253ANBWT%253A%26coordListOutputFormat%3DSTRING%26max%3D5%26inclFilter%3D1%26coordOutputFormat%3DNBWT%26type_1%3DSTOP%26radius_1%3D1000%27&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-
-
+function getArrivalTime(fromId, toId, callback, atTime) {
+	atTime = atTime || new Date();
+	console.log(atTime)
+	// &itdTime=0800&itdDate=20171031
+	//&itdTripDateTimeDepArr=arr&name_origin=51000007
+	//&name_destination=53006670
+	
+	var template = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20\'http%3A%2F%2Fwww.efa-bw.de%2Fandroid_bvb%2FXML_TRIP_REQUEST2%3Flanguage%3Den%26calcNumberOfTrips%3D2%26coordListOutputFormat%3DSTRING%26coordOutputFormat%3DNBWT%26coordOutputFormatTail%3D0%26locationServerActive%3D1%26itdTime%3D<TIME>%26itdDate%3D20171031%26itdTripDateTimeDepArr%3Darr%26name_origin%3D51000007%26type_origin%3Dany%26name_destination%3D53006670%26type_destination%3Dany%26useRealtime%3D1%26imparedOptionsActive%3D1%26excludedMeans%3Dcheckbox%26itOptionsActive%3D1%26useProxFootSearch%3Dtrue%26trITMOTvalue100%3D10%26lineRestriction%3D400%26changeSpeed%3Dfast%26routeType%3DLEASTTIME%26ptOptionsActive%3D1\'%20&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+	$.ajax({
+		url: template.replace('<TIME>',formatWithTrailingZeros(atTime.getHours(),2)+formatWithTrailingZeros(atTime.getMinutes(),2)),
+		type: 'get',
+		dataType : 'json',
+		success: function (data) {
+//			var stations = mapStations(data.query.results.efa.sf.p)
+			if(callback) callback(data.query.results.efa.ts.tp[0].ls.l.pss);
+		}
+	});
+}
 
 
