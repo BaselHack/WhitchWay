@@ -63,8 +63,13 @@
 			var from = document.getElementById("from" + r).value;
 			var to = document.getElementById("to" + r).value;
 			
+			if (to.length === 0 || from.length === 0){
 			
-			newLocation +=  "r"+r+"="+from+","+to+";";
+			}else{
+				newLocation +=  "r"+r+"="+from+","+to+";";
+				
+			}
+			
 			r++;
 			fromTest = document.getElementById("from"+r);
 			
