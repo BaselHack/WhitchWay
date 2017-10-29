@@ -2,9 +2,9 @@
 BaslerVerkehrsBetriebe Real Time Route Calculation
 
 
-https://baselhack.github.io/bvbrtrc/
+https://baselhack.github.io/WhitchWay/
 
-https://gitter.im/bvbrtrc/
+https://gitter.im/WhitchWay/
 
-![qrcode](https://api.qrserver.com/v1/create-qr-code/?color=000000&bgcolor=FFFFFF&data=https%3A%2F%2Fbaselhack.github.io%2Fbvbrtrc%2F&qzone=1&margin=0&size=300x300&ecc=L)
+![qrcode](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fgithub.com%2FBaselHack%2FWhitchWay&size=300x300&margin=0)
 
