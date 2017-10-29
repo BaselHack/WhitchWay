@@ -28,35 +28,31 @@
 
         
    
- 
+	<!-- URL testen, ob diese Daten beinhaltet
 	function urlTesten(){
 		var url = location.href.split("#")[1];
 		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
 		if(url === undefined){
-		
-		 
+			<!-- Muss nichts gemacht werden -->		 
 		}else{
-		 var d = document.getElementById("intro");
-		d.classList.add("visibilityNo");
-		var e = document.getElementById("result");
-		e.classList.remove("visibilityNo");
-		e.classList.add("visibilityYes");
-		
-		
+			var d = document.getElementById("intro");
+			d.classList.add("visibilityNo");
+			var e = document.getElementById("result");
+			e.classList.remove("visibilityNo");
+			e.classList.add("visibilityYes");
 		}
 	}
    
+
+	
+	
+	
 	<!-- Daten in die URL schreiben -->
-	
-	
-	
-	
 	function manipulateURL() {
 		var fromTest = document.getElementById("from1");
 		 var r = 1;
 		 var newLocation ="";
-		 
-		do {
+		 do {
 			var from = document.getElementById("from" + r).value;
 			var to = document.getElementById("to" + r).value;
 			newLocation +=  "r"+r+"="+from+","+to+";"
@@ -64,12 +60,13 @@
 			fromTest = document.getElementById("from"+r);
 			window.alert(fromTest);
 		} while (fromTest != null);
-		
 		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
        
-	   }
-	
+	}
+	   
+	   
+	<!--- neue Route  -->
 	function addRoute(){
 	var oldNumb = document.getElementById('counterRoute').getAttribute('value');
 	var newNumb = parseInt(oldNumb) + 1;
