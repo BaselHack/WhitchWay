@@ -32,7 +32,12 @@ All the information is safed inside the html link, which you safed. If you now s
 
 
 http://cubiq.org/add-to-home-screen
+
+
+
 4. Adding shortcut to your Android homescreen
+
+https://www.howtogeek.com/196087/how-to-add-websites-to-the-home-screen-on-any-smartphone-or-tablet/
 
 
 
