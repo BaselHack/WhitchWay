@@ -1,4 +1,4 @@
-# bvbrtrc
+# WhitchWay
 BaslerVerkehrsBetriebe Real Time Route Calculation
 
 
