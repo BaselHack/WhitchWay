@@ -25,7 +25,7 @@ function findStation(query, callback) {
 		dataType : 'json',
 		success: function (data) {
 			var stations = mapStations(data.query.results.efa.sf.p)
-			if(callback) callback(data);
+			if(callback) callback(stations);
 		}
 	});
 }
