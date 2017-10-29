@@ -77,3 +77,31 @@ function mapTrip(tp) {
 }
 
 
+function fakeIt() {
+	getTrips(parseUrl(), $("#result"));
+}
+
+function getTrips(trips, node) {
+	var runningCalls = 0;
+	$.each(trips, function( index, trip ) {
+		 getArrivalTime(trip.from.id, trip.to.id, function(currentTrip){
+			 console.log(currentTrip)
+			 node.append("<pre>From "+trip.from.name+" " +currentTrip.departure+" "+currentTrip.how+" to "+trip.to.name+" " +currentTrip.arrival+"</pre>")
+		 });
+	});
+}
+
+function parseUrl(url) {
+	return [
+	{
+		from : {id : 51000001, name : "Aeschenplatz" },
+		to : {id : 51000019, name : "Bruderholz" },
+	},
+	{
+		from : {id : 51000007, name : "Bahnhof SBB" },
+		to : {id : 51000010, name : "Bedrettostrasse" },
+	}];
+	
+}
+
+
