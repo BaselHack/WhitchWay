@@ -52,9 +52,20 @@
 	
 	
 	function manipulateURL() {
-		var form1 = document.getElementById("from1").value;
-		var to1 = document.getElementById("to1").value;
-		window.location = "../bvbrtrc/index.html#r1="+form1+","+to1; 
+		var fromTest = document.getElementById("from1");
+		 var r = 1;
+		 var newLocation ="";
+		 
+		do {
+			var from = document.getElementById("from" + r).value;
+			var to = document.getElementById("to" + r).value;
+			newLocation +=  "r"+r+"="+from+","+to+";"
+			r++;
+			fromTest = document.getElementById("from"+r);
+			window.alert(fromTest);
+		} while (fromTest != null);
+		
+		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
        
 	   }
@@ -69,12 +80,12 @@
 		'				  <div class="card-body">'+
 		' 				  <div class="input-group">'+
 		'				  <span class="input-group-addon" id="basic-addon1">From </span>'+
-		'				  <input id="from1" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">'+
+		'				  <input id="from'+newNumb+'" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">'+
 		'				</div>'+
 		'      			</br>'+
 		'				<div class="input-group">'+
 		' 		   	  <span class="input-group-addon" id="basic-addon1">To</span>'+
-		'       	  <input id="to1" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">'+
+		'       	  <input id="to'+newNumb+'" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">'+
 		'     			</div>'+
 		'			  </br>'+
 		'				<div id="moreThrough0" class="moreThrough'+oldNumb+'" ></div>'+
@@ -179,6 +190,7 @@
 		.input-group-addon{width: 100px;}
 		.visibilityYes { visibility: visible;}
 		.visibilityNo { visibility: collapse;}
+		.card-header { font-weight: bold;}
 	</style>
 		
 	
