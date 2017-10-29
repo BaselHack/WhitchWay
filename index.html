@@ -66,7 +66,7 @@
 			r++;
 			fromTest = document.getElementById("from"+r);
 		} while (fromTest != null);
-		window.location = "../bvbrtrc/index.html?#"+newLocation; 	
+		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
 	}
 	   
@@ -239,6 +239,9 @@
    
    <form id="intro" autocomplete="off" >
    
+   <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
+  <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button> 
+ </br>
    
    
    
@@ -261,6 +264,12 @@
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">To</span>
 	  <input id="to1" list="stationTo" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
+		<datalist id="stationTo">
+			<option value="Aeschenplatz">
+			<option value="Aesch Dorf">
+		</datalist>
+	
+	
 	</div>
     <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
@@ -277,8 +286,7 @@
   
   
   
- <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
-  <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
+ 
 </form>
 
 <div id="result" class="visibilityNo" >
