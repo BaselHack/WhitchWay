@@ -43,6 +43,8 @@ function formatWithTrailingZeros(i, width) {
 
 function getArrivalTime(fromId, toId, callback, atTime) {
 	atTime = atTime || new Date();
+	// todo why is it going into the past?
+	atTime = new Date(atTime.getTime()+1000*60*11);
 	var template = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20xml%20where%20url%20%3D%20\'http%3A%2F%2Fwww.efa-bw.de%2Fandroid_bvb%2Fandroid_bvb%2FXML_TRIP_REQUEST2%3Flanguage%3Den%26calcNumberOfTrips%3D4%26coordListOutputFormat%3DSTRING%26coordOutputFormat%3DNBWT%26coordOutputFormatTail%3D0%26locationServerActive%3D1%26itdTime%3D<TIME>%26itdDate%3D<DATE>%26itdTripDateTimeDepArr%3Ddep%26name_origin%3D<FROM>%26type_origin%3Dany%26name_destination%3D<TO>%26type_destination%3Dany%26useRealtime%3D1%26imparedOptionsActive%3D1%26excludedMeans%3Dcheckbox%26itOptionsActive%3D1%26useProxFootSearch%3Dtrue%26trITMOTvalue100%3D10%26lineRestriction%3D400%26changeSpeed%3Dnormal%26routeType%3DLEASTTIME%26ptOptionsActive%3D1%26\'%20&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 	
 	$.ajax({
