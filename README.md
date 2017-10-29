@@ -17,8 +17,8 @@ https://baselhack.github.io/WhitchWay/
 
 
 2. How to use it?
-- Open the GitHub directory, download file and open inedx.html
-  or just scan this:
+- Open the GitHub directory, download it and open inedx.html
+- or just scan this:
   
   
   ![qrcode](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fbaselhack.github.io%2FWhitchWay%2F&size=300x300&margin=0)
@@ -28,7 +28,7 @@ https://baselhack.github.io/WhitchWay/
 - to make the decision, just open the safed link.
 
 extras:
-All the information is safed inside the html link, which you safed. If you now send it to an other person, he will have the same routes as you. 
+All the information is safed inside the html link, which you safed bevore. If you now send it to an other person, he will have the same routes as you and can use it the same way as well. 
 
 3. Adding shortcut to your iPhone homescreen
 
