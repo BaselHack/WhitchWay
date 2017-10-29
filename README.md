@@ -23,7 +23,9 @@ https://baselhack.github.io/WhitchWay/
 
 3. Adding shortcut to your iPhone homescreen
 
- on the homescreen (iPhone)
+
+http://cubiq.org/add-to-home-screen
+4. Adding shortcut to your Android homescreen
 
 
 
