@@ -1,10 +1,29 @@
 # WhitchWay
 BaslerVerkehrsBetriebe Real Time Route Calculation
 
+Inhaltverzeichnis
+-------------------------------------------
+1. GitHub directory
+2. How to use it?
+3. Adding shortcut to your iPhone homescreen
+4. Adding shortcut to your Adroid homescreen
+-------------------------------------------
+
+
+1. GitHub Directory
 
 https://baselhack.github.io/WhitchWay/
 
-https://gitter.im/WhitchWay/
+2. How to use it?
+- Open the GitHub directory and scan the QR-Code
+- Fill the form und save
+- After the result are showing on the screen
+- Make a shortcut in your browser or on the homescreen
+- If you need to know the best way, then open the shortcut and the best way will showed to you
 
-![qrcode](https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fbaselhack.github.io%2FWhitchWay%2F&size=300x300&margin=0)
+3. Adding shortcut to your iPhone homescreen
+
+ on the homescreen (iPhone)
+
+
 
