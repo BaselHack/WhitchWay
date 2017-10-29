@@ -60,7 +60,6 @@
 		var fromTest = document.getElementById("from1");
 		 var r = 1;
 		 var newLocation ="";
-		 window.alert("test");
 		 do {
 			var from = document.getElementById("from" + r).value;
 			var to = document.getElementById("to" + r).value;
@@ -79,9 +78,7 @@
 		
 			
 		} while (fromTest != null);
-		//window.location = "../bvbrtrc/index.html#"+newLocation; 
-		window.alert(location.href);
-		window.location = location.href +"#"+newLocation;		
+		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
 	}
 	   
@@ -276,8 +273,11 @@
 		<datalist id="stationFrom">
 			<option value="Aeschenplatz">
 			<option value="Aesch Dorf">
-		</datalist>
-	
+			<option value="Bahnhof SBB">
+			<option value="Bedrettostrasse">
+			<option value="Bruderholz">
+			
+		</datalist>	
 	</div>
 	</br>
 	<div class="input-group">
@@ -286,6 +286,9 @@
 		<datalist id="stationTo">
 			<option value="Aeschenplatz">
 			<option value="Aesch Dorf">
+			<option value="Bahnhof SBB">
+			<option value="Bedrettostrasse">
+			<option value="Bruderholz">
 		</datalist>
 		</div>
 		<div id="counterThrough" value="0" style ="visibility: collapse" >0</div>	
