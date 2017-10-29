@@ -28,16 +28,16 @@
 
         
    
-	<!-- URL testen, ob diese Daten beinhaltet
+	// URL testen, ob diese Daten beinhaltet
 	function urlTesten(){
 		var url = location.href.split("#")[1];
-		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
+		//Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
 		if(url === undefined){
 		var url = location.href.split("?")[1];
 			
 			
 		
-			<!-- Muss nichts gemacht werden -->		 
+			//  Muss nichts gemacht werden		 
 		}else{
 			var d = document.getElementById("intro");
 			d.classList.add("visibilityNo");
@@ -54,7 +54,7 @@
 	
 	
 	
-	<!-- Daten in die URL schreiben -->
+	//Daten in die URL schreiben -->
 	function manipulateURL() {
 		var fromTest = document.getElementById("from1");
 		 var r = 1;
@@ -101,13 +101,13 @@
 	}
 	
 	function edit(){
-	<!-- Trennt Seiten URL von Daten -->
+	//Trennt Seiten URL von Daten -->
 	var url = location.href.split("#")[1];
 	
-	<!-- Trennt Routen-->
+	//Trennt Routen-->
 	var allRoutes = url.split(";"); 
 	var countRoutes =0;
-	<!-- Zählt Routen -->
+	//Zählt Routen -->
 	allRoutes.forEach(function(allRoutesElement) { 
 		countRoutes ++;
 	});
@@ -127,7 +127,7 @@
 	var routes = [];
 		
 		
-	<!-- Kann man kürzen -->
+	//Kann man kürzen -->
 	for (var k=0; k<countRoutes-1; k++) {
 			
 		routes[k] = [];		
