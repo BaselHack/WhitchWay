@@ -24,7 +24,7 @@
   
 	$(document).ready(function() {
 			urlTesten();
-			});
+	});
 
         
    
@@ -58,11 +58,9 @@
 			newLocation +=  "r"+r+"="+from+","+to+";"
 			r++;
 			fromTest = document.getElementById("from"+r);
-			window.alert(fromTest);
 		} while (fromTest != null);
 		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
-       
 	}
 	   
 	   
@@ -101,16 +99,46 @@
 	}
 	
 	function edit(){
+	<!-- Trennt Seiten URL von Daten -->
 	var url = location.href.split("#")[1];
-	var url = url.split("=")[1];
-	var urlA = url.split(",")[0];
-	var urlB = url.split(",")[1];
+	
+	<!-- Trennt Routen-->
+	var allRoutes = url.split(";"); 
+	var countRoutes =0;
+	<!-- Zählt Routen -->
+	allRoutes.forEach(function(allRoutesElement) { 
+		countRoutes ++;
+	});
+	
+	var i = 0;
+	do {
+		addRoute();
+		i++;
+	}while( i < countRoutes -2);
+	
+	var routes = [];
+		
+		
+	<!-- Kann man kürzen -->
+	for (var k=0; k<countRoutes-1; k++) {
+			
+		routes[k] = [];		
+		routes[k] [0] = (allRoutes[k].split("=")[1]).split(",")[0];
+		routes[k] [1] = (allRoutes[k].split("=")[1]).split(",")[1];
+   }
+   
+	for (n = 0; n < countRoutes -1; n++){
+		var a = document.getElementById("from"+(n+1));
+		a.value = routes[n][0];
+		
+		var b = document.getElementById("to"+(n+1));
+		b.value = routes[n][1];
+		
+	}
+	 
 	
 	
-	 var a = document.getElementById("from1");
-	a.value = urlA;
-	 var b = document.getElementById("to1");
-	 b.value = urlB;
+	 
 	
 	
 	
