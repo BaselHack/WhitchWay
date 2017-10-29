@@ -24,7 +24,7 @@
   
 	$(document).ready(function() {
 			urlTesten();
-			});
+	});
 
         
    
@@ -41,6 +41,7 @@
 			e.classList.remove("visibilityNo");
 			e.classList.add("visibilityYes");
 		}
+		
 	}
    
 
@@ -58,11 +59,9 @@
 			newLocation +=  "r"+r+"="+from+","+to+";"
 			r++;
 			fromTest = document.getElementById("from"+r);
-			window.alert(fromTest);
 		} while (fromTest != null);
 		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
-       
 	}
 	   
 	   
@@ -84,14 +83,9 @@
 		' 		   	  <span class="input-group-addon" id="basic-addon1">To</span>'+
 		'       	  <input id="to'+newNumb+'" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">'+
 		'     			</div>'+
-		'			  </br>'+
-		'				<div id="moreThrough0" class="moreThrough'+oldNumb+'" ></div>'+
-		'				<button id="buttonRoute'+newNumb+'" type="button" class="btn btn-success"  onclick="addThrough1('+nameButton+')">+ Add Through</button> '+
-		'				<div id="counterThrough" class="counter-'+newNumb+'" value="0" style ="visibility: collapse" >0</div>'+
 		'			  </div>'+
 		'				</div>'+
-		' 				</br>'+
-		'				<div id="moreRoute'+newNumb+'" class="moreThrough'+newNumb+'"></div>';
+		' 				</br>';
 		
 		document.getElementById('moreRoute'+oldNumb).innerHTML = string;
 		
@@ -101,16 +95,46 @@
 	}
 	
 	function edit(){
+	<!-- Trennt Seiten URL von Daten -->
 	var url = location.href.split("#")[1];
-	var url = url.split("=")[1];
-	var urlA = url.split(",")[0];
-	var urlB = url.split(",")[1];
+	
+	<!-- Trennt Routen-->
+	var allRoutes = url.split(";"); 
+	var countRoutes =0;
+	<!-- Zählt Routen -->
+	allRoutes.forEach(function(allRoutesElement) { 
+		countRoutes ++;
+	});
+	
+	var i = 0;
+	do {
+		addRoute();
+		i++;
+	}while( i < countRoutes -2);
+	
+	var routes = [];
+		
+		
+	<!-- Kann man kürzen -->
+	for (var k=0; k<countRoutes-1; k++) {
+			
+		routes[k] = [];		
+		routes[k] [0] = (allRoutes[k].split("=")[1]).split(",")[0];
+		routes[k] [1] = (allRoutes[k].split("=")[1]).split(",")[1];
+   }
+   
+	for (n = 0; n < countRoutes -1; n++){
+		var a = document.getElementById("from"+(n+1));
+		a.value = routes[n][0];
+		
+		var b = document.getElementById("to"+(n+1));
+		b.value = routes[n][1];
+		
+	}
+	 
 	
 	
-	 var a = document.getElementById("from1");
-	a.value = urlA;
-	 var b = document.getElementById("to1");
-	 b.value = urlB;
+	 
 	
 	
 	
@@ -127,51 +151,57 @@
 	}
 	
 	
-	<!-- neue Through hinzufügen -->
-	function addThrough1(id){
+	
+	//function addThrough1(id){
 			
 			
 			
-			if (parseInt(id) == 1 ){
-				var oldNumb = document.getElementById('counterThrough').getAttribute('value');
-				var newNumb = parseInt(oldNumb) + 1;
-				var string = '<div class="input-group">'+
-								'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
-								'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
-							 '</div>'+
-							 '</br>'+
-							 '<div id="moreThrough'+newNumb+'"></div>';
-				document.getElementById('moreThrough'+oldNumb).innerHTML = string;
-				document.getElementById('counterThrough').setAttribute("value", newNumb);
-				var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');
-			}
+	//		if (parseInt(id) == 1 ){
+	//			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
+		//		var newNumb = parseInt(oldNumb) + 1;
+		//		var string = '<div class="input-group">'+
+		//						'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+		//						'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+		//					 '</div>'+
+		//					 '</br>'+
+		//					 '<div id="moreThrough'+newNumb+'"></div>';
+		//		document.getElementById('moreThrough'+oldNumb).innerHTML = string;
+		//		document.getElementById('counterThrough').setAttribute("value", newNumb);
+		//		var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');
+		//	}
 			
 			
-			else{
-				var correctForRoute =parseInt(id)-1
+		//	else{
+		//		var correctForRoute =parseInt(id)-1
 			
 		
 				
 				
 				//FUNKTIONIERT NICHT
-				window.alert("counter-"+id);
+		//		window.alert("counter-"+id);
 				
-				window.alert(getElementByClassName("counter-2"));
-				var oldNumb = getElementByClassName("counter-2").getAttribute('value');
-				var newNumb = parseInt(oldNumb) + 1;
-				var string = '<div class="input-group">'+
-								'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
-								'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
-							 '</div>'+
-							 '</br>'+
-							 '<div id="moreThrough'+newNumb+'"></div>';
-				getElementByClassName('moreThrough'+oldNumb).innerHTML = string;
-				getElementByClassName("counter-'+id'").setAttribute("value", newNumb);
-				var newnewNumb = document.getElementById(route).getElementById('moreThrough'+oldNumb).getAttribute('value');
-		}			
-	} <!-- Ende Through-->
+		//		window.alert(getElementByClassName("counter-2"));
+		//		var oldNumb = getElementByClassName("counter-2").getAttribute('value');
+		//		var newNumb = parseInt(oldNumb) + 1;
+		//		var string = '<div class="input-group">'+
+		//						'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+		//						'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+		//					 '</div>'+
+		//					 '</br>'+
+		//					 '<div id="moreThrough'+newNumb+'"></div>';
+		//		getElementByClassName('moreThrough'+oldNumb).innerHTML = string;
+		//		getElementByClassName("counter-'+id'").setAttribute("value", newNumb);
+		//		var newnewNumb = document.getElementById(route).getElementById('moreThrough'+oldNumb).getAttribute('value');
+	//	}			
+	//} 
 	
 	
+	
+	
+	function findStation(){
+		window.alert("HALLO");
+		
+	}
 
 
 
@@ -201,7 +231,7 @@
    <h1> Whitch Way? </h1>
    
    
-   <form id="intro"  >
+   <form id="intro" autocomplete="off" >
    
    
    
@@ -214,19 +244,19 @@
   <div class="card-body">
 	  <div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">From</span>
-	  <input id="from1" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
+	  <input id="from1" list="stationFrom" onkeypress="findStation()" value="" type="text" class="form-control" placeholder="Station From" aria-label="from" aria-describedby="basic-addon1">
+		<datalist id="stationFrom">
+			<option value="Aeschenplatz">
+			<option value="Aesch Dorf">
+		</datalist>
+	
 	</div>
 	</br>
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">To</span>
-	  <input id="to1" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
+	  <input id="to1" list="stationTo" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
 	</div>
-  </br>
-
- 
-  <div id="moreThrough0"></div>
-  <button id="buttonRoute1" type="button" class="btn btn-success"  onclick="addThrough1('1')">+ Add Through</button> 
-  <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
+    <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
   </div>
@@ -241,7 +271,7 @@
   
   
   
-  <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
+ <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
 </form>
 
