@@ -112,12 +112,18 @@
 		countRoutes ++;
 	});
 	
-	var i = 0;
-	do {
-		addRoute();
-		i++;
-	}while( i < countRoutes -2);
 	
+	
+	if ((countRoutes -2) === 0){
+	
+	}else{
+		var i = 0;
+		do {
+			addRoute();
+			i++;
+
+		}while( i < countRoutes -2);
+	}
 	var routes = [];
 		
 		
@@ -224,6 +230,7 @@
 		.visibilityYes { visibility: visible;}
 		.visibilityNo { visibility: collapse;}
 		.card-header { font-weight: bold;}
+		.btn { padding-bottom: 5px;}
 	</style>
 		
 	
@@ -241,7 +248,8 @@
    
    <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button> 
- </br>
+	<br />
+	<br />
    
    
    
