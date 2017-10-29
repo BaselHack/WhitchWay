@@ -83,14 +83,9 @@
 		' 		   	  <span class="input-group-addon" id="basic-addon1">To</span>'+
 		'       	  <input id="to'+newNumb+'" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">'+
 		'     			</div>'+
-		'			  </br>'+
-		'				<div id="moreThrough0" class="moreThrough'+oldNumb+'" ></div>'+
-		'				<button id="buttonRoute'+newNumb+'" type="button" class="btn btn-success"  onclick="addThrough1('+nameButton+')">+ Add Through</button> '+
-		'				<div id="counterThrough" class="counter-'+newNumb+'" value="0" style ="visibility: collapse" >0</div>'+
 		'			  </div>'+
 		'				</div>'+
-		' 				</br>'+
-		'				<div id="moreRoute'+newNumb+'" class="moreThrough'+newNumb+'"></div>';
+		' 				</br>';
 		
 		document.getElementById('moreRoute'+oldNumb).innerHTML = string;
 		
@@ -156,49 +151,49 @@
 	}
 	
 	
-	<!-- neue Through hinzufügen -->
-	function addThrough1(id){
+	
+	//function addThrough1(id){
 			
 			
 			
-			if (parseInt(id) == 1 ){
-				var oldNumb = document.getElementById('counterThrough').getAttribute('value');
-				var newNumb = parseInt(oldNumb) + 1;
-				var string = '<div class="input-group">'+
-								'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
-								'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
-							 '</div>'+
-							 '</br>'+
-							 '<div id="moreThrough'+newNumb+'"></div>';
-				document.getElementById('moreThrough'+oldNumb).innerHTML = string;
-				document.getElementById('counterThrough').setAttribute("value", newNumb);
-				var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');
-			}
+	//		if (parseInt(id) == 1 ){
+	//			var oldNumb = document.getElementById('counterThrough').getAttribute('value');
+		//		var newNumb = parseInt(oldNumb) + 1;
+		//		var string = '<div class="input-group">'+
+		//						'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+		//						'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+		//					 '</div>'+
+		//					 '</br>'+
+		//					 '<div id="moreThrough'+newNumb+'"></div>';
+		//		document.getElementById('moreThrough'+oldNumb).innerHTML = string;
+		//		document.getElementById('counterThrough').setAttribute("value", newNumb);
+		//		var newnewNumb = document.getElementById('moreThrough'+oldNumb).getAttribute('value');
+		//	}
 			
 			
-			else{
-				var correctForRoute =parseInt(id)-1
+		//	else{
+		//		var correctForRoute =parseInt(id)-1
 			
 		
 				
 				
 				//FUNKTIONIERT NICHT
-				window.alert("counter-"+id);
+		//		window.alert("counter-"+id);
 				
-				window.alert(getElementByClassName("counter-2"));
-				var oldNumb = getElementByClassName("counter-2").getAttribute('value');
-				var newNumb = parseInt(oldNumb) + 1;
-				var string = '<div class="input-group">'+
-								'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
-								'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
-							 '</div>'+
-							 '</br>'+
-							 '<div id="moreThrough'+newNumb+'"></div>';
-				getElementByClassName('moreThrough'+oldNumb).innerHTML = string;
-				getElementByClassName("counter-'+id'").setAttribute("value", newNumb);
-				var newnewNumb = document.getElementById(route).getElementById('moreThrough'+oldNumb).getAttribute('value');
-		}			
-	} <!-- Ende Through-->
+		//		window.alert(getElementByClassName("counter-2"));
+		//		var oldNumb = getElementByClassName("counter-2").getAttribute('value');
+		//		var newNumb = parseInt(oldNumb) + 1;
+		//		var string = '<div class="input-group">'+
+		//						'<span class="input-group-addon" id="basic-addon1">Through '+newNumb+'</span>'+
+		//						'<input type="text" class="form-control" placeholder="Station Through" aria-label="through" aria-describedby="basic-addon1">'+
+		//					 '</div>'+
+		//					 '</br>'+
+		//					 '<div id="moreThrough'+newNumb+'"></div>';
+		//		getElementByClassName('moreThrough'+oldNumb).innerHTML = string;
+		//		getElementByClassName("counter-'+id'").setAttribute("value", newNumb);
+		//		var newnewNumb = document.getElementById(route).getElementById('moreThrough'+oldNumb).getAttribute('value');
+	//	}			
+	//} 
 	
 	
 	
@@ -261,12 +256,7 @@
 	  <span class="input-group-addon" id="basic-addon1">To</span>
 	  <input id="to1" list="stationTo" value="" type="text" class="form-control" placeholder="Station To" aria-label="to" aria-describedby="basic-addon1">
 	</div>
-  </br>
-
- 
-  <div id="moreThrough0"></div>
-  <button id="buttonRoute1" type="button" class="btn btn-success"  onclick="addThrough1('1')">+ Add Through</button> 
-  <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
+    <div id="counterThrough" value="0" style ="visibility: collapse" >0</div>
 	
 	
   </div>
@@ -281,7 +271,7 @@
   
   
   
-  <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
+ <button type="button" class="btn btn-success"  onclick="addRoute()">+ Add one more Route</button>
   <button type="save" class="btn btn-primary"  onclick="manipulateURL()">Save</button>
 </form>
 
