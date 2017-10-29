@@ -33,6 +33,9 @@
 		var url = location.href.split("#")[1];
 		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
 		if(url === undefined){
+		
+		
+		
 			<!-- Muss nichts gemacht werden -->		 
 		}else{
 			var d = document.getElementById("intro");
@@ -41,6 +44,8 @@
 			e.classList.remove("visibilityNo");
 			e.classList.add("visibilityYes");
 		}
+	
+		
 		
 	}
    
@@ -60,7 +65,7 @@
 			r++;
 			fromTest = document.getElementById("from"+r);
 		} while (fromTest != null);
-		window.location = "../bvbrtrc/index.html#"+newLocation; 	
+		window.location = "../bvbrtrc/index.html?#"+newLocation; 	
 		location.reload();
 	}
 	   
