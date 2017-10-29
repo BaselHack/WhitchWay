@@ -31,13 +31,24 @@ extras:
 All the information is safed inside the html link, which you safed bevore. If you now send it to an other person, he will have the same routes as you and can use it the same way as well. 
 
 3. Adding shortcut to your iPhone homescreen
-
+- When you are on the safed page you need to press bookmark Icon
+- then choose "Add to homescreen"
+- change the name, to somthing rememberable
+- shortcut will apear on your homescreen
+- drag it around
+- to start it, tap on it
 
 http://cubiq.org/add-to-home-screen
 
 
 
 4. Adding shortcut to your Android homescreen
+- when you opend our Website and safed the information
+- on the most Browser you can tap on the menu
+- choose add to home screen
+- Icoon will appear on you home screen
+- drag it raound
+- to start it, tap on it
 
 https://www.howtogeek.com/196087/how-to-add-websites-to-the-home-screen-on-any-smartphone-or-tablet/
 
