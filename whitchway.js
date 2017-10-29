@@ -75,9 +75,13 @@ function mapTrip(tp) {
 	var departure  = pd[0].st.rt;	
 	var pa = trips[trips.length-1].ps.p;
 	var arrival = pa[pa.length-1].st.rt;
-	return {departure: departure, how : how, arrival:arrival}
+	return {departure: formatTime(departure), how : how, arrival:formatTime(arrival)}
 }
 
+function formatTime(time) {
+	time = ""+time;
+	return time.substr(0,2)+":"+time.substr(2,4);
+}
 
 function fakeIt() {
 	getTrips(parseUrl(), $("#result"));
