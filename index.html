@@ -33,7 +33,7 @@
 		var url = location.href.split("#")[1];
 		<!-- Wenn kein Inhalt nach # ist, dann lassen, sonst ausblenden
 		if(url === undefined){
-		var url = location.href.split("?")[1];
+			addRoute();
 			
 			
 		
@@ -62,9 +62,15 @@
 		 do {
 			var from = document.getElementById("from" + r).value;
 			var to = document.getElementById("to" + r).value;
-			newLocation +=  "r"+r+"="+from+","+to+";"
+			
+			
+			newLocation +=  "r"+r+"="+from+","+to+";";
 			r++;
 			fromTest = document.getElementById("from"+r);
+			
+			
+		
+			
 		} while (fromTest != null);
 		window.location = "../bvbrtrc/index.html#"+newLocation; 	
 		location.reload();
