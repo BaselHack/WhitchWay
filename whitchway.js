@@ -88,7 +88,7 @@ function getTrips(trips, node) {
 	$.each(trips, function( index, trip ) {
 		 getArrivalTime(trip.from.id, trip.to.id, function(currentTrip){
 			 console.log(currentTrip)
-			 node.append("<pre>From "+trip.from.name+" " +currentTrip.departure+" "+currentTrip.how+" to "+trip.to.name+" " +currentTrip.arrival+"</pre>")
+			 node.append("<br/><span>From <b>"+trip.from.name+"</b> " +currentTrip.departure+" "+currentTrip.how+" to "+trip.to.name+" <b>" +currentTrip.arrival+"</b></span>")
 		 });
 	});
 }
